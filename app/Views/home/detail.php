@@ -27,12 +27,12 @@
                              class="w-full h-80 sm:h-[420px] object-cover group-hover:scale-105 transition-transform duration-500">
                         
                         <div class="absolute top-4 left-4 flex flex-col gap-2">
-                            <span class="px-3.5 py-1.5 rounded-xl bg-brand-primary text-brand-accent font-display font-black text-xs border border-brand-accent shadow-md">
-                                📍 Asal Daerah: <?= esc($makanan['asal_daerah'] ?? 'Jambi') ?>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-brand-primary text-brand-accent font-display font-black text-xs border border-brand-accent shadow-md flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot"></i> Asal Daerah: <?= esc($makanan['asal_daerah'] ?? 'Jambi') ?>
                             </span>
                             <?php if ($makanan['is_unggulan']): ?>
-                                <span class="px-3 py-1 rounded-xl bg-amber-800 text-white font-bold text-xs shadow-md">
-                                    ⭐ Menu Rekomendasi Chef
+                                <span class="px-3 py-1 rounded-xl bg-amber-800 text-white font-bold text-xs shadow-md flex items-center gap-1.5">
+                                    <i class="fa-solid fa-award text-amber-300"></i> Menu Rekomendasi Chef
                                 </span>
                             <?php endif; ?>
                         </div>

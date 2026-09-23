@@ -71,7 +71,9 @@
                         <?php else: ?>
                             <tr>
                                 <td colspan="8" class="text-center py-12 text-gray-500">
-                                    <div class="text-3xl mb-2">📋</div>
+                                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl mx-auto mb-2 border border-brand-accent/20">
+                                        <i class="fa-solid fa-clipboard-list"></i>
+                                    </div>
                                     Belum ada data reservasi yang masuk. <br>
                                     <a href="<?= base_url('/reservasi') ?>" class="text-xs font-bold text-amber-800 hover:underline">
                                         Coba isi form reservasi sekarang

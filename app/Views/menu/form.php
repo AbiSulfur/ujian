@@ -163,8 +163,8 @@
                     <input type="checkbox" name="is_unggulan" value="1" id="is_unggulan" 
                            <?= old('is_unggulan', $makanan['is_unggulan'] ?? 0) ? 'checked' : '' ?>
                            class="w-5 h-5 rounded text-amber-600 focus:ring-brand-primary border-brand-accent cursor-pointer">
-                    <label for="is_unggulan" class="text-xs font-bold text-brand-accent cursor-pointer">
-                        ⭐ Jadikan Menu Unggulan (Akan disorot di Beranda & prioritas sorting "Paling Populer")
+                    <label for="is_unggulan" class="text-xs font-bold text-brand-accent cursor-pointer flex items-center gap-1.5">
+                        <i class="fa-solid fa-star text-amber-500"></i> Jadikan Menu Unggulan (Akan disorot di Beranda & prioritas sorting "Paling Populer")
                     </label>
                 </div>
 

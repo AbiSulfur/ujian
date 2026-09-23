@@ -1,3 +1,18 @@
+<?php
+/**
+ * @var array<int, array<string, mixed>> $menuList
+ * @var array<int, string> $categories
+ * @var string $activeKategori
+ * @var string $activeSort
+ * @var string $keyword
+ * @var int $totalMenu
+ */
+$keyword        = is_string($keyword ?? null) ? $keyword : '';
+$activeKategori = is_string($activeKategori ?? null) ? $activeKategori : 'Semua';
+$activeSort     = is_string($activeSort ?? null) ? $activeSort : 'terbaru';
+$categories     = is_array($categories ?? null) ? $categories : ['Semua', 'Menu Utama', 'Lauk Tambahan', 'Minuman'];
+$menuList       = is_array($menuList ?? null) ? $menuList : [];
+?>
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
@@ -58,12 +73,12 @@
                         <i class="fa-solid fa-arrow-down-short-wide text-amber-600 mr-1"></i> Urutkan (Sorting)
                     </label>
                     <select name="sort" onchange="this.form.submit()" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-brand-accent text-sm font-bold focus:outline-none focus:ring-2 focus:ring-brand-primary bg-brand-primary/20 text-brand-accent cursor-pointer">
-                        <option value="unggulan" <?= $activeSort === 'unggulan' ? 'selected' : '' ?>>⭐ Paling Populer / Unggulan</option>
-                        <option value="termurah" <?= $activeSort === 'termurah' ? 'selected' : '' ?>>💰 Harga Terendah (Termurah)</option>
-                        <option value="termahal" <?= $activeSort === 'termahal' ? 'selected' : '' ?>>💎 Harga Tertinggi (Termahal)</option>
-                        <option value="nama_asc" <?= $activeSort === 'nama_asc' ? 'selected' : '' ?>>🔤 Nama Makanan (A - Z)</option>
-                        <option value="nama_desc" <?= $activeSort === 'nama_desc' ? 'selected' : '' ?>>🔤 Nama Makanan (Z - A)</option>
-                        <option value="terbaru" <?= $activeSort === 'terbaru' ? 'selected' : '' ?>>🆕 Menu Terbaru</option>
+                        <option value="unggulan" <?= $activeSort === 'unggulan' ? 'selected' : '' ?>>Paling Populer / Unggulan</option>
+                        <option value="termurah" <?= $activeSort === 'termurah' ? 'selected' : '' ?>>Harga Terendah (Termurah)</option>
+                        <option value="termahal" <?= $activeSort === 'termahal' ? 'selected' : '' ?>>Harga Tertinggi (Termahal)</option>
+                        <option value="nama_asc" <?= $activeSort === 'nama_asc' ? 'selected' : '' ?>>Nama Makanan (A - Z)</option>
+                        <option value="nama_desc" <?= $activeSort === 'nama_desc' ? 'selected' : '' ?>>Nama Makanan (Z - A)</option>
+                        <option value="terbaru" <?= $activeSort === 'terbaru' ? 'selected' : '' ?>>Menu Terbaru</option>
                     </select>
                 </div>
 
@@ -133,7 +148,7 @@
                                 </span>
                                 <?php if ($m['is_unggulan']): ?>
                                     <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-amber-800 text-white font-bold text-[10px] shadow-sm">
-                                        ⭐ Unggulan
+                                        <i class="fa-solid fa-star text-brand-primary text-[9px]"></i> Unggulan
                                     </span>
                                 <?php endif; ?>
                             </div>
@@ -191,7 +206,9 @@
             </div>
         <?php else: ?>
             <div class="text-center py-16 bg-white rounded-3xl border-2 border-brand-accent p-8 space-y-4">
-                <div class="text-5xl">🍲</div>
+                <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-3xl mx-auto border border-brand-accent/20">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
                 <h3 class="font-display font-bold text-xl text-brand-accent">Tidak Ada Data Menu</h3>
                 <p class="text-sm text-gray-600 max-w-md mx-auto">
                     Katalog saat ini kosong atau hasil filter tidak ditemukan.

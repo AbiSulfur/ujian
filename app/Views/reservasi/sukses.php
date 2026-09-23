@@ -8,7 +8,7 @@
         <div class="bg-white rounded-3xl border-2 border-brand-accent shadow-hard-lg p-8 sm:p-12 text-center space-y-6">
             
             <div class="w-20 h-20 rounded-3xl bg-brand-primary border-2 border-brand-accent flex items-center justify-center text-4xl shadow-hard mx-auto text-brand-accent">
-                🎉
+                <i class="fa-solid fa-circle-check"></i>
             </div>
 
             <div class="space-y-2">

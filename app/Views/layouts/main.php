@@ -71,7 +71,7 @@
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
             <div class="flex items-center gap-2">
                 <span class="inline-block w-2 h-2 rounded-full bg-brand-primary animate-ping"></span>
-                <span>🔥 <strong>Spesial Tanah Pilih Pusako Betuah:</strong> Nikmati Kelezatan Nasi Gemuk Otentik Khas Jambi Hari Ini!</span>
+                <span><i class="fa-solid fa-fire text-brand-primary mr-1"></i> <strong>Spesial Tanah Pilih Pusako Betuah:</strong> Nikmati Kelezatan Nasi Gemuk Otentik Khas Jambi Hari Ini!</span>
             </div>
             <div class="flex items-center gap-4 text-xs font-medium text-amber-200">
                 <span><i class="fa-solid fa-location-dot mr-1"></i> Jl. Kolonel Abunjani, Kota Jambi</span>
@@ -194,7 +194,7 @@
     </main>
 
     <!-- Footer Resto Triwiyatno (Warna Aksen #1F2937) -->
-    <footer class="bg-brand-accent text-amber-100 border-t-4 border-brand-primary mt-20">
+    <footer class="bg-brand-accent text-amber-100 border-t-2 border-brand-accent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 

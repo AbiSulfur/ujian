@@ -1,3 +1,20 @@
+<?php
+/**
+ * @var array<int, array<string, mixed>> $menuList
+ * @var array<int, array<string, mixed>> $menuUnggulan
+ * @var array<int, string> $categories
+ * @var string $activeKategori
+ * @var string $activeSort
+ * @var string $keyword
+ * @var int $totalMenu
+ */
+$keyword        = is_string($keyword ?? null) ? $keyword : '';
+$activeKategori = is_string($activeKategori ?? null) ? $activeKategori : 'Semua';
+$activeSort     = is_string($activeSort ?? null) ? $activeSort : 'unggulan';
+$categories     = is_array($categories ?? null) ? $categories : ['Semua', 'Menu Utama', 'Lauk Tambahan', 'Minuman'];
+$menuList       = is_array($menuList ?? null) ? $menuList : [];
+$menuUnggulan   = is_array($menuUnggulan ?? null) ? $menuUnggulan : [];
+?>
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
@@ -10,7 +27,7 @@
             <!-- Left Headline & Story -->
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-primary border-2 border-brand-accent text-brand-accent font-display font-black text-xs uppercase tracking-wider shadow-hard">
-                    <span class="text-base">🌶️</span> Ikon Kuliner Provinsi Jambi
+                    <i class="fa-solid fa-pepper-hot text-amber-900 text-sm"></i> Ikon Kuliner Provinsi Jambi
                 </div>
 
                 <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl text-brand-accent leading-none tracking-tight">
@@ -47,7 +64,7 @@
                         <div class="text-xs font-semibold text-brand-accent-light">Pilihan Menu Juara</div>
                     </div>
                     <div>
-                        <div class="font-display font-black text-2xl text-brand-accent">4.9 ★</div>
+                        <div class="font-display font-black text-2xl text-brand-accent flex items-center gap-1">4.9 <i class="fa-solid fa-star text-amber-500 text-lg"></i></div>
                         <div class="text-xs font-semibold text-brand-accent-light">Ulasan Pelanggan</div>
                     </div>
                 </div>
@@ -74,8 +91,8 @@
                     </div>
 
                     <!-- Highlight Sticker -->
-                    <div class="absolute -bottom-5 -left-4 bg-brand-primary text-brand-accent border-2 border-brand-accent px-4 py-2 rounded-2xl font-display font-black text-sm shadow-hard rotate-6">
-                        🌾 Beras Pilihan & Santan Murni
+                    <div class="absolute -bottom-5 -left-4 bg-brand-primary text-brand-accent border-2 border-brand-accent px-4 py-2 rounded-2xl font-display font-black text-sm shadow-hard rotate-6 flex items-center gap-1.5">
+                        <i class="fa-solid fa-wheat-awn text-brand-accent"></i> Beras Pilihan & Santan Murni
                     </div>
                 </div>
             </div>
@@ -100,8 +117,8 @@
             
             <!-- Bento 1 -->
             <div class="p-8 rounded-3xl bg-amber-50/60 border-2 border-brand-accent shadow-hard space-y-4 hover:-translate-y-1 transition-transform">
-                <div class="w-14 h-14 rounded-2xl bg-brand-primary border-2 border-brand-accent flex items-center justify-center text-2xl shadow-hard">
-                    🥥
+                <div class="w-14 h-14 rounded-2xl bg-brand-primary border-2 border-brand-accent flex items-center justify-center text-2xl shadow-hard text-brand-accent">
+                    <i class="fa-solid fa-bowl-rice"></i>
                 </div>
                 <h3 class="font-display font-bold text-xl text-brand-accent">Santan Murni & Daun Pandan Asli</h3>
                 <p class="text-sm text-gray-700 leading-relaxed font-medium">
@@ -112,7 +129,7 @@
             <!-- Bento 2 (Dominant Accent) -->
             <div class="p-8 rounded-3xl bg-brand-primary border-2 border-brand-accent shadow-hard space-y-4 hover:-translate-y-1 transition-transform">
                 <div class="w-14 h-14 rounded-2xl bg-brand-accent text-brand-primary flex items-center justify-center text-2xl shadow-hard">
-                    🌶️
+                    <i class="fa-solid fa-pepper-hot"></i>
                 </div>
                 <h3 class="font-display font-bold text-xl text-brand-accent">Sambal Terasi Ulek Otentik Jambi</h3>
                 <p class="text-sm text-brand-accent/90 leading-relaxed font-semibold">
@@ -122,8 +139,8 @@
 
             <!-- Bento 3 -->
             <div class="p-8 rounded-3xl bg-amber-50/60 border-2 border-brand-accent shadow-hard space-y-4 hover:-translate-y-1 transition-transform">
-                <div class="w-14 h-14 rounded-2xl bg-brand-primary border-2 border-brand-accent flex items-center justify-center text-2xl shadow-hard">
-                    👑
+                <div class="w-14 h-14 rounded-2xl bg-brand-primary border-2 border-brand-accent flex items-center justify-center text-2xl shadow-hard text-brand-accent">
+                    <i class="fa-solid fa-crown"></i>
                 </div>
                 <h3 class="font-display font-bold text-xl text-brand-accent">Kuliner Ikonik Lainnya dari Jambi</h3>
                 <p class="text-sm text-gray-700 leading-relaxed font-medium">
@@ -192,12 +209,12 @@
                         <i class="fa-solid fa-arrow-down-short-wide text-amber-600 mr-1"></i> Urutkan (Sorting)
                     </label>
                     <select name="sort" onchange="this.form.submit()" class="w-full px-3.5 py-2.5 rounded-xl border-2 border-brand-accent text-sm font-bold focus:outline-none focus:ring-2 focus:ring-brand-primary bg-brand-primary/20 text-brand-accent cursor-pointer">
-                        <option value="unggulan" <?= $activeSort === 'unggulan' ? 'selected' : '' ?>>⭐ Paling Populer / Unggulan</option>
-                        <option value="termurah" <?= $activeSort === 'termurah' ? 'selected' : '' ?>>💰 Harga Terendah (Termurah)</option>
-                        <option value="termahal" <?= $activeSort === 'termahal' ? 'selected' : '' ?>>💎 Harga Tertinggi (Termahal)</option>
-                        <option value="nama_asc" <?= $activeSort === 'nama_asc' ? 'selected' : '' ?>>🔤 Nama Makanan (A - Z)</option>
-                        <option value="nama_desc" <?= $activeSort === 'nama_desc' ? 'selected' : '' ?>>🔤 Nama Makanan (Z - A)</option>
-                        <option value="terbaru" <?= $activeSort === 'terbaru' ? 'selected' : '' ?>>🆕 Menu Terbaru</option>
+                        <option value="unggulan" <?= $activeSort === 'unggulan' ? 'selected' : '' ?>>Paling Populer / Unggulan</option>
+                        <option value="termurah" <?= $activeSort === 'termurah' ? 'selected' : '' ?>>Harga Terendah (Termurah)</option>
+                        <option value="termahal" <?= $activeSort === 'termahal' ? 'selected' : '' ?>>Harga Tertinggi (Termahal)</option>
+                        <option value="nama_asc" <?= $activeSort === 'nama_asc' ? 'selected' : '' ?>>Nama Makanan (A - Z)</option>
+                        <option value="nama_desc" <?= $activeSort === 'nama_desc' ? 'selected' : '' ?>>Nama Makanan (Z - A)</option>
+                        <option value="terbaru" <?= $activeSort === 'terbaru' ? 'selected' : '' ?>>Menu Terbaru</option>
                     </select>
                 </div>
 
@@ -270,7 +287,7 @@
                                 </span>
                                 <?php if ($m['is_unggulan']): ?>
                                     <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-lg bg-amber-800 text-white font-bold text-[10px] shadow-sm">
-                                        ⭐ Unggulan
+                                        <i class="fa-solid fa-star text-brand-primary text-[9px]"></i> Unggulan
                                     </span>
                                 <?php endif; ?>
                             </div>
@@ -324,7 +341,9 @@
         <?php else: ?>
             <!-- Empty state -->
             <div class="text-center py-16 bg-white rounded-3xl border-2 border-brand-accent p-8 space-y-4">
-                <div class="text-5xl">🔍</div>
+                <div class="w-16 h-16 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-3xl mx-auto border border-brand-accent/20">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
                 <h3 class="font-display font-bold text-xl text-brand-accent">Menu Tidak Ditemukan</h3>
                 <p class="text-sm text-gray-600 max-w-md mx-auto">
                     Tidak ada menu kuliner yang cocok dengan kata kunci atau filter yang Anda pilih. Coba reset filter untuk melihat semua sajian.
@@ -339,7 +358,7 @@
 </section>
 
 <!-- CALL TO ACTION RESERVASI MEJA & PRE-ORDER -->
-<section class="py-16 bg-brand-primary border-t-2 border-b-2 border-brand-accent">
+<section class="py-16 bg-brand-primary border-t-2 border-brand-accent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         <span class="inline-block px-4 py-1 rounded-full bg-brand-accent text-brand-primary font-display font-black text-xs uppercase tracking-wider">
             Reservasi Cepat & Nyaman

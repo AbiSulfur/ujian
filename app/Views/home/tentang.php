@@ -38,22 +38,28 @@
             </div>
 
             <div class="border-t-2 border-gray-100 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-2">
-                    <div class="text-2xl">🌱</div>
+                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold border border-emerald-300 shadow-sm">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
                     <h4 class="font-display font-bold text-base text-brand-accent">100% Rempah Lokal</h4>
                     <p class="text-xs text-gray-600 font-medium">
                         Menggunakan kayu manis asli Kerinci, cabai merah segar Jambi, dan terasi pilihan tanpa penyedap berlebih.
                     </p>
                 </div>
-                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-2">
-                    <div class="text-2xl">🍳</div>
+                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-xl font-bold border border-amber-300 shadow-sm">
+                        <i class="fa-solid fa-fire-burner"></i>
+                    </div>
                     <h4 class="font-display font-bold text-base text-brand-accent">Masak Segar Setiap Hari</h4>
                     <p class="text-xs text-gray-600 font-medium">
                         Sajian nasi gurih dimasak hangat subuh hari dan lauk dimasak fresh demi menjaga mutu dan kenikmatan.
                     </p>
                 </div>
-                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-2">
-                    <div class="text-2xl">🤝</div>
+                <div class="p-5 rounded-2xl bg-amber-50/60 border border-brand-accent/20 space-y-3">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl font-bold border border-blue-300 shadow-sm">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
                     <h4 class="font-display font-bold text-base text-brand-accent">Standar Modern</h4>
                     <p class="text-xs text-gray-600 font-medium">
                         Kebersihan tempat, pelayanan cepat, dan kemudahan pemesanan digital demi kenyamanan pelanggan setia.
